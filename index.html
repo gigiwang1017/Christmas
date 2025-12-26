@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Particle Christmas Tree</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Load MediaPipe libraries globally via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind Config for JIT via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'luxury-gold': '#FFD700',
+              'luxury-gold-dim': '#C5A000',
+              'emerald-deep': '#002A1F',
+              'rich-red': '#8B0000',
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              display: ['"Cinzel"', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000; }
+        #root { width: 100vw; height: 100vh; }
+        
+        /* Lil-GUI custom styling for luxury feel */
+        .lil-gui { 
+          --background-color: rgba(0, 26, 20, 0.9);
+          --text-color: #e0e0e0;
+          --title-background-color: #002A1F;
+          --widget-color: #333;
+          --hover-color: #444;
+          --focus-color: #555;
+          --number-color: #FFD700;
+          --string-color: #FFD700;
+          font-family: 'Playfair Display', serif !important;
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Position GUI on the right side, offset from the top to avoid clashing with buttons */
+        .lil-gui.root { 
+            position: absolute; 
+            top: 80px; 
+            right: 24px; 
+            z-index: 150; 
+            width: 280px;
+        }
+        
+        .camera-container {
+            transition: opacity 0.5s ease;
+        }
+
+        /* Custom Scrollbar for GUI */
+        .custom-gui-scroll::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-gui-scroll::-webkit-scrollbar-track {
+          background: rgba(0, 42, 31, 0.3);
+        }
+        .custom-gui-scroll::-webkit-scrollbar-thumb {
+          background: #FFD700;
+          border-radius: 10px;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "three": "https://aistudiocdn.com/three@^0.181.2",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
+    "@react-three/postprocessing": "https://aistudiocdn.com/@react-three/postprocessing@^3.0.4",
+    "lil-gui": "https://aistudiocdn.com/lil-gui@^0.21.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Grand Luxury Interactive Christmas Tree A1",
+  "description": "A high-fidelity, cinematic 3D Christmas experience featuring a dynamic chaos-to-form transformation, opulent emerald and gold aesthetics, and interactive physics-based animation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
